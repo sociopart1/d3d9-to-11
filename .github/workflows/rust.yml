@@ -27,13 +27,13 @@ jobs:
             location: .
     - name: Install Nightly Rust
       run: 
-            .\rustup-init.exe -y --default-toolchain nightly --default-host i686-pc-windows-msvc
+            .\rustup-init.exe -y --default-toolchain nightly --default-host i686-w64-mingw32-gcc
     - name: Set system path
       run: 
             set PATH=%USERPROFILE%/.cargo/bin;
     - name: Build
       run: 
-            cargo +nightly build --release --target i686-pc-windows-msvc --verbose
+            cargo +nightly build --release --target i686-w64-mingw32-gcc --verbose
     - name: Artifact Release
       uses: actions/upload-artifact@v1
       with:
