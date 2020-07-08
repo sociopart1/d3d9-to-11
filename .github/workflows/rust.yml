@@ -38,11 +38,11 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: d3d9
-        path: target\i686-pc-windows-msvc\release\d3d9.dll
+        path: target\i686-w64-mingw32-gcc\release\d3d9.dll
     - name: Run tests
       run: cargo test --verbose
     - name: Artifact Release
       uses: actions/upload-artifact@v1
       with:
         name: d3d9
-        path: target\i686-pc-windows-msvc\release\d3d9.dll
+        path: target\i686-w64-mingw32-gcc\release\d3d9.dll
