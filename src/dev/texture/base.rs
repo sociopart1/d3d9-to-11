@@ -60,9 +60,9 @@ impl std::ops::Deref for Thunk {
         &self.txt
     }
 }
-
+//untested fix
 impl std::ops::DerefMut for Thunk {
-    type Target = BaseTexture;
+    //type Target = BaseTexture;
     fn deref_mut(&mut self) -> &mut BaseTexture {
         &mut self.txt
     }

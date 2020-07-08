@@ -81,9 +81,9 @@ impl std::ops::Deref for Thunk {
         &self.rsrc
     }
 }
-
+//untested fix
 impl std::ops::DerefMut for Thunk {
-    type Target = Resource;
+   // type Target = Resource;
     fn deref_mut(&mut self) -> &mut Resource {
         &mut self.rsrc
     }

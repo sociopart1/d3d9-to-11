@@ -324,7 +324,7 @@ impl Context {
             unsafe {
                 // First we need to retrieve its current value.
                 let mut c = 0u16;
-                asm!("fnstcw $0" : "=*m"(&c) : : : "volatile");
+                llvm_asm!("fnstcw $0" : "=*m"(&c) : : : "volatile");
 
                 // Clear (some of) the control word's bits:
                 // - Sets rounding mode to nearest even.
@@ -334,7 +334,7 @@ impl Context {
                 // Mask all exceptions.
                 c |= (1 << 6) - 1;
 
-                asm!("fldcw $0" : : "*m"(&c) : : : "volatile")
+                llvm_asm!("fldcw $0" : : "*m"(&c) : : : "volatile")
             }
         }
 
